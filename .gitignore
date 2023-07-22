@@ -2,6 +2,9 @@
 *.pyc
 *.pyo
 __pycache__/
+.pytest_cache
+.coverage
+.vscode
 db.sqlite3
 
 # Secret key configuration (if kept in settings.py)
