@@ -13,3 +13,6 @@ static/
 
 # Virtual environment
 venv/
+
+
+.env
