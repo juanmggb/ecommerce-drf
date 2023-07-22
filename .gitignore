@@ -14,5 +14,5 @@ static/
 # Virtual environment
 venv/
 
-
+# Ignore environment variables
 .env
