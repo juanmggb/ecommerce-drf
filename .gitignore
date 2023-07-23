@@ -10,6 +10,7 @@ db.sqlite3
 # Secret key configuration (if kept in settings.py)
 myproject/settings_secret.py
 
+
 # Media and static files (if managed by Django)
 media/
 static/
@@ -19,3 +20,10 @@ venv/
 
 # Ignore environment variables
 .env
+
+# Ignore shcema file 
+schema.yml
+
+
+# Ignore coverage report 
+htmlcov/
