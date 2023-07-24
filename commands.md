@@ -20,8 +20,10 @@ jsonschema-specifications==2023.7.1
 mypy-extensions==1.0.0
 packaging==23.1
 pathspec==0.11.1
+Pillow==10.0.0
 platformdirs==3.9.1
 pluggy==1.2.0
+Pygments==2.15.1
 pytest==7.4.0
 pytest-cov==4.1.0
 pytest-cover==3.0.0
