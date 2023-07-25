@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from drf_spectacular.utils import extend_schema
 
-from product.models import Category, Brand, Product
-from product.serializers import CategorySerializer, BrandSerializer, ProductSerializer
+from product.models import Category, Product
+from product.serializers import CategorySerializer, ProductSerializer
 from rest_framework.decorators import action
 
 from django.db import connection
@@ -32,21 +32,6 @@ class CategoryViewSet(ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class BrandViewSet(ViewSet):
-
-    """
-    A simple ViewSet for wiewing brands
-    """
-
-    queryset = Brand.objects.all()
-
-    @extend_schema(responses=BrandSerializer)
-    def list(self, request):
-        serializer = BrandSerializer(self.queryset, many=True)
-
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-
 class ProductViewSet(ViewSet):
 
     """
@@ -60,7 +45,7 @@ class ProductViewSet(ViewSet):
     def retrieve(self, request, slug=None):
         serializer = ProductSerializer(
             self.queryset.filter(slug=slug)
-            .select_related("category", "brand")
+            .select_related("category")
             .prefetch_related(Prefetch("product_line__product_image"))
             .prefetch_related(Prefetch("product_line__attribute_value__attribute")),
             many=True,

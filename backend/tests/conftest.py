@@ -4,22 +4,22 @@ from .factories import (
     AttributeFactory,
     AttributeValueFactory,
     CategoryFactory,
-    BrandFactory,
     ProductFactory,
     ProductLineFactory,
     ProductImageFactory,
     ProductTypeFactory,
+    ProductLineAttributeValueFactory,
 )
 import pytest
 
 register(AttributeFactory)
 register(AttributeValueFactory)
 register(CategoryFactory)
-register(BrandFactory)
 register(ProductFactory)
 register(ProductLineFactory)
 register(ProductImageFactory)
 register(ProductTypeFactory)
+register(ProductLineAttributeValueFactory)
 
 # How to access it
 # category_factory
